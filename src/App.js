@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 
 function App() {
   return (
+    <div className='bg-gray-100'>
     <BrowserRouter>
       <Navbar />
       <Routes>
@@ -13,6 +14,7 @@ function App() {
         <Route path='/cart' element={<Cart />} />
       </Routes>
     </BrowserRouter>
+    </div>
   );
 }
 

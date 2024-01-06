@@ -3,9 +3,9 @@ import { api } from "./api";
 const getProducts = async () => {
     try {
         const resp = await api.get('/products')
-        const data = resp.data;
-        console.log(data)
-
+        let data = resp.data;
+        data = data.products
+        return data
     } catch (error) {
         if (error.response) {
             // The request was made, but the server responded with an error status code
