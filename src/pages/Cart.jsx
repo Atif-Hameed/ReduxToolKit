@@ -7,8 +7,8 @@ const Cart = () => {
   const products = useSelector((state) => state.cart)
   const dispatch = useDispatch()
 
-  const handleAdd = (product) => {
-    dispatch( remove(product) )
+  const handleAdd = (productId) => {
+    dispatch( remove(productId) )
   }
 
   return (
@@ -21,7 +21,7 @@ const Cart = () => {
             <div className='text-center font-medium'>{Product.description}</div>
             <div className='font-bold text-xl'>{Product.price}</div>
             <button
-              onClick={() => handleAdd(Product)}
+              onClick={() => handleAdd(Product.id)}
               className='p-1 px-2 text-white bg-purple-600 rounded-lg'>Remove</button>
           </div>
         ))}
