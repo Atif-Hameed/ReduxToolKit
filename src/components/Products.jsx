@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import getProducts from '../services/products';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { add } from '../store/cartSlice';
 import { fetchProducts } from '../store/productSlice';
 
 const Products = () => {
 
     const dispatch = useDispatch()
-    const [products, setProducts] = useState([]);
+    const {data: products, status} = useSelector( (state) => state.product )   // we can use "data"directly but we rename it as
+    // const [products, setProducts] = useState([]);
 
     const getAllProducts = async () => {
         try {
