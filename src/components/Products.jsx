@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import getProducts from '../services/products';
 import { useDispatch } from 'react-redux';
 import { add } from '../store/cartSlice';
+import { fetchProducts } from '../store/productSlice';
 
 const Products = () => {
 
@@ -10,11 +11,10 @@ const Products = () => {
 
     const getAllProducts = async () => {
         try {
-
-            const data = await getProducts();
-            // console.log(data)
-            setProducts(data);
-            console.log("products : ",products)
+            dispatch(fetchProducts())
+            // const data = await getProducts();
+            // setProducts(data);
+            // console.log("products : ",products)
 
         } catch (error) {
             console.error('Error fetching products:', error.message);
