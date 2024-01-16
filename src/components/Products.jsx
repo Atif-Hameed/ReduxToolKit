@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import getProducts from '../services/products';
+import React, { useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { add } from '../store/cartSlice';
 import { Statuses, fetchProducts } from '../store/productSlice';
@@ -26,6 +25,8 @@ const Products = () => {
         getAllProducts();
     }, [])
 
+
+    // State handling
     if(status === Statuses.LOADING){
         return <h1 className='text-2xl font-bold' >Loading....</h1>
     }
