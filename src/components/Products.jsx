@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import getProducts from '../services/products';
 import { useDispatch, useSelector } from 'react-redux';
 import { add } from '../store/cartSlice';
-import { fetchProducts } from '../store/productSlice';
+import { Statuses, fetchProducts } from '../store/productSlice';
 
 const Products = () => {
 
@@ -25,6 +25,14 @@ const Products = () => {
     useEffect(() => {
         getAllProducts();
     }, [])
+
+    if(status === Statuses.LOADING){
+        return <h1 className='text-2xl font-bold' >Loading....</h1>
+    }
+
+    if(status === Statuses.Error){
+        return <h2 className='text-2xl font-bold text-red-600' >Sorry something went wrong!</h2>
+    }
 
     const handleAdd = (product) => {
         dispatch( add(product) )

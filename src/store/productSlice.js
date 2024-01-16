@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import getProducts from "../services/products";
 
-const Statuses = Object.freeze({    //freeze -> could not change values become readonly
+export const Statuses = Object.freeze({    //freeze -> could not change values become readonly
     IDLE: 'idle',
     Error: 'error',
     LOADING: 'loading',
