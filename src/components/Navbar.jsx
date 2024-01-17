@@ -8,12 +8,13 @@ const Navbar = () => {
 
     const navItems = [
         {label : 'Home', url : '/'},
-        {label : 'Cart', url : '/cart'}
+        {label : 'Cart', url : '/cart'},
+        {label : 'Todo', url : '/todo'}
     ]
 
     return (
         <>
-            <div className='flex items-center flex-wrap md:px-16 px-4'>
+            <div className='flex items-center flex-wrap md:px-16 px-4 absolute w-full'>
                 <div className='md:w-[35%] text-4xl font-bold'>Redux Store</div>
                 <div className='md:w-[65%] flex items-center justify-between'>
                     <div className='flex md:w-1/2 justify-evenly gap-3 items-center'>

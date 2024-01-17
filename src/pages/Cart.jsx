@@ -12,8 +12,8 @@ const Cart = () => {
   }
 
   return (
-    <div>
-      <h1 className='text-3xl font-bold text-center my-3' >Cart</h1>
+    <div className='min-h-[100vh]'>
+      <h1 className='text-3xl font-bold text-center py-3 pt-10' >Cart</h1>
       <div className='grid lg:grid-cols-5 md:grid-cols-3 grid-cols-1 px-8 gap-8'>
         {products.map(Product => (
           <div className='flex flex-col bg-white gap-3 rounded-lg justify-center items-center p-6' key={Product.id} >
